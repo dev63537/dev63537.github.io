@@ -47,11 +47,12 @@
   <button onclick="showGreeting()">click Me</button>
 
   <div id="greeting"></div>
-
+  <pre id="greeting"></pre>
+  
   <script>
     function showGreeting() {
       const name = document.getElementById('nameInput').value;
-      const greeting = name ? `Hello, ${name}! fuck you baby 
+      const greeting = name ? `Hello, ${name}! fuck you baby
          / \
         |\_/|
         |---|
@@ -68,7 +69,8 @@
   \               /
    \             /
     \           /.` : "Please enter your name!";
-      document.getElementById('greeting').textContent = greeting;
+      document.getElementById('greeting').innerHTML = greeting.replace(/\n/g, "<br>");
+
     }
   </script>
 
